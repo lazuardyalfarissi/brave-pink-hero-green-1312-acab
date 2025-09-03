@@ -903,22 +903,16 @@
                 const imageData = ctx.getImageData(0, 0, width, height);
                 const data = imageData.data;
 
-                // Define enhanced duotone colors (more vibrant for Gen Z aesthetic)
-                const pink = { r: 255, g: 0, b: 110 };      // Cyber Pink
-                const green = { r: 0, g: 245, b: 255 };     // Neon Cyan-Green
-
-                // Apply enhanced duotone effect with better contrast
+                // Tentukan warna duotone yang lebih sederhana
+                const pink = { r: 255, g: 105, b: 180 }; // Warna pink
+                const green = { r: 0, g: 128, b: 0 };    // Warna hijau
+                
+                // Algoritma Duotone yang disederhanakan
                 for (let i = 0; i < data.length; i += 4) {
-                    // Calculate luminance with slightly different weights for more dramatic effect
-                    const luminance = (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114) / 255;
-                    
-                    // Apply smooth duotone mapping with enhanced contrast
-                    const smoothLuminance = Math.pow(luminance, 0.8); // Gamma correction for better contrast
-                    
-                    data[i]     = Math.round(green.r * (1 - smoothLuminance) + pink.r * smoothLuminance);     // Red
-                    data[i + 1] = Math.round(green.g * (1 - smoothLuminance) + pink.g * smoothLuminance);     // Green  
-                    data[i + 2] = Math.round(green.b * (1 - smoothLuminance) + pink.b * smoothLuminance);     // Blue
-                    // Alpha channel (data[i + 3]) remains unchanged
+                    const brightness = (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114) / 255;
+                    data[i]     = pink.r * brightness + green.r * (1 - brightness);
+                    data[i + 1] = pink.g * brightness + green.g * (1 - brightness);
+                    data[i + 2] = pink.b * brightness + green.b * (1 - brightness);
                 }
 
                 // Put processed image data back to canvas
