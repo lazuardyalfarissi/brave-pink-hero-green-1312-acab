@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave Pink Hero Green 1312 ⚡ Justice Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --primary-pink: #ff006e;
+            --primary-green: #00f5ff;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --accent-gradient: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #00f5ff 100%);
+            --glow-pink: rgba(255, 0, 110, 0.3);
+            --glow-green: rgba(0, 245, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, var(--glow-pink) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--glow-green) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(131, 56, 236, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: backgroundMove 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundMove {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Floating particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-pink);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(2n) {
+            background: var(--primary-green);
+            animation-delay: -2s;
+        }
+
+        .particle:nth-child(3n) {
+            background: #8338ec;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 80px 0 40px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+            z-index: -1;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.2); }
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px var(--glow-pink);
+            letter-spacing: -2px;
+            line-height: 0.9;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .justice-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 110, 0.2);
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-pink);
+            box-shadow: 0 8px 32px rgba(255, 0, 110, 0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 8px 32px rgba(255, 0, 110, 0.1); }
+            100% { box-shadow: 0 8px 32px rgba(255, 0, 110, 0.3), 0 0 50px rgba(255, 0, 110, 0.1); }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Cards */
+        .meaning-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meaning-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--glow-pink), transparent, var(--glow-green), transparent);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        .meaning-section::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: var(--dark-bg);
+            border-radius: 22px;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .color-meanings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .color-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 0, 110, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px var(--glow-pink);
+        }
+
+        .color-card.green:hover {
+            border-color: rgba(0, 245, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px var(--glow-green);
+        }
+
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .color-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .color-icon.pink {
+            background: linear-gradient(135deg, var(--primary-pink), #ff1493);
+            box-shadow: 0 10px 30px var(--glow-pink);
+        }
+
+        .color-icon.green {
+            background: linear-gradient(135deg, var(--primary-green), #00cc88);
+            box-shadow: 0 10px 30px var(--glow-green);
+        }
+
+        .color-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .tribute-message {
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(0, 245, 255, 0.1));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tribute-message::before {
+            content: '⚖️';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: var(--dark-bg);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .tribute-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-pink);
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--glow-pink), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: rotate 3s linear infinite;
+        }
+
+        .upload-area:hover::before {
+            opacity: 0.1;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary-pink);
+            background: rgba(255, 0, 110, 0.05);
+            transform: scale(1.02);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--primary-green);
+            background: rgba(0, 245, 255, 0.05);
+            box-shadow: 0 0 50px var(--glow-green);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .upload-button {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.3);
+        }
+
+        .upload-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.4);
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            margin-top: 60px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .image-container {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-container h3 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .image-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            display: inline-block;
+            max-width: 100%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-wrapper img,
+        .image-wrapper canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .download-button {
+            background: linear-gradient(135deg, var(--primary-green), #00cc88);
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 25px;
+            display: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px var(--glow-green);
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.4);
+        }
+
+        /* Memorial Section */
+        .memorial-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(17, 17, 17, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .memorial-section::before {
+            content: '🕯️';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: var(--dark-bg);
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        .memorial-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .memorial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .creator-info {
+            margin-bottom: 30px;
+        }
+
+        .creator-name {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+            color: white;
+            text-decoration: none;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(225, 48, 108, 0.3);
+        }
+
+        .instagram-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(225, 48, 108, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 60px 0 30px;
+            }
+
+            .meaning-section,
+            .upload-section {
+                padding: 30px 20px;
+            }
+
+            .color-meanings {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .upload-area {
+                padding: 40px 20px;
+            }
+
+            .theme-toggle {
+                top: 20px;
+                right: 20px;
+                padding: 10px 16px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--primary-pink);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Switch Vibe</button>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>BRAVE PINK<br>HERO GREEN<br>1312</h1>
+            <p class="subtitle">Transform your memories with justice and honor ⚡</p>
+            <div class="justice-badge">
+                <span>⚖️</span>
+                <span>FIGHT FOR JUSTICE</span>
+            </div>
+        </div>
+
+        <!-- Memorial Section -->
+        <div class="memorial-section">
+            <h2 class="memorial-title">In Memory & Solidarity</h2>
+            <p class="memorial-text">
+                This digital space is dedicated to honoring those who have fallen in the pursuit of justice and livelihood. 
+                Every color, every pixel carries the weight of their stories, transforming ordinary images into monuments of remembrance and calls for justice.
+            </p>
+        </div>
+
+        <!-- Makna Warna Section -->
+        <div class="meaning-section">
+            <h2 class="section-title">Color Stories ✨</h2>
+            
+            <div class="color-meanings">
+                <div class="color-card pink">
+                    <div class="color-header">
+                        <div class="color-icon pink">💪</div>
+                        <h3>Warrior Pink</h3>
+                    </div>
+                    <p>Represents the fierce mothers in pink hijabs who stand as the frontline guardians of justice. 
+                    They are the unshakeable pillars of strength in our fight for a more just and prosperous Indonesia. 
+                    Their courage echoes through generations.</p>
+                </div>
+
+                <div class="color-card green">
+                    <div class="color-header">
+                        <div class="color-icon green">🕊️</div>
+                        <h3>Memorial Green</h3>
+                    </div>
+                    <p>A tribute to the online drivers who lost their lives in tragic accidents. 
+                    This sacred green symbolizes our collective mourning, hope, and prayers for the families they left behind. 
+                    Their sacrifice will never be forgotten.</p>
+                </div>
+            </div>
+
+            <div class="tribute-message">
+                <p class="tribute-text">🏛️ Built to Uphold Justice 🏛️</p>
+                <p>A digital memorial for those who fight and those who have fallen</p>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2 class="section-title">Transform Your Image</h2>
+            <input type="file" id="image-upload" accept="image/*" style="display: none;">
+            
+            <div class="upload-area" id="drop-area">
+                <div class="upload-icon">📷</div>
+                <h3>Drop Your Photo Here</h3>
+                <p>or click to select from your device</p>
+                <button class="upload-button">Choose Image</button>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-secondary);">
+                    Support: JPG, PNG, WebP (Max. 10MB)
+                </p>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Transforming your image with justice...</p>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="results-section">
+            <h2 class="section-title">⚡ Transformation Complete</h2>
+            
+            <div class="results-grid">
+                <div class="image-container">
+                    <h3>📷 Original Memory</h3>
+                    <div class="image-wrapper">
+                        <img id="original-image" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="image-container">
+                    <h3>🎨 Justice Edition</h3>
+                    <div class="image-wrapper">
+                        <canvas id="duotone-canvas" style="display: none;"></canvas>
+                    </div>
+                    <button class="download-button" id="download-btn">💾 Save Memorial</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="creator-info">
+                <p>Crafted with passion by</p>
+                <div class="creator-name">Lazuardy Al Farissi</div>
+            </div>
+            
+            <a href="https://instagram.com/lazuardy_alf" target="_blank" class="instagram-link">
+                <span style="margin-right: 10px;">📱</span>
+                Connect on Instagram
+            </a>
+            
+            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-secondary);">
+                © 2025 Brave Pink Hero Green 1312 • Justice Never Sleeps
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 6) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Theme toggle functionality (keeping dark theme focus)
+        function toggleTheme() {
+            document.body.style.filter = document.body.style.filter ? '' : 'hue-rotate(30deg) saturate(1.2)';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            const dropArea = document.getElementById('drop-area');
+            const fileInput = document.getElementById('image-upload');
+            const resultsSection = document.getElementById('results-section');
+            const originalImage = document.getElementById('original-image');
+            const duotoneCanvas = document.getElementById('duotone-canvas');
+            const downloadBtn = document.getElementById('download-btn');
+            const loading = document.getElementById('loading');
+            const ctx = duotoneCanvas.getContext('2d');
+            
+            // Drag & Drop functionality
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, preventDefaults, false);
+                document.body.addEventListener(eventName, preventDefaults, false);
+            });
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropArea.addEventListener(eventName, highlight, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropArea.addEventListener(eventName, unhighlight, false);
+            });
+
+            function highlight() {
+                dropArea.classList.add('dragover');
+            }
+
+            function unhighlight() {
+                dropArea.classList.remove('dragover');
+            }
+
+            dropArea.addEventListener('drop', handleDrop, false);
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleFiles(files);
+            }
+
+            // Click to upload
+            dropArea.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+            // Download functionality
+            downloadBtn.addEventListener('click', () => {
+                const link = document.createElement('a');
+                link.download = 'brave-pink-hero-justice-memorial.png';
+                link.href = duotoneCanvas.toDataURL();
+                link.click();
+            });
+
+            function handleFiles(files) {
+                if (files.length === 0) return;
+                
+                const file = files[0];
+                
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    alert('❌ File must be an image!');
+                    return;
+                }
+                
+                // Validate file size (10MB max)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('❌ Maximum file size is 10MB!');
+                    return;
+                }
+
+                // Show loading
+                loading.classList.add('active');
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        setTimeout(() => {
+                            processImage(img, e.target.result);
+                            loading.classList.remove('active');
+                        }, 1500); // Add dramatic loading time
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            function processImage(img, src) {
+                // Show original image
+                originalImage.src = src;
+                originalImage.style.display = 'block';
+
+                // Calculate canvas size (maintain aspect ratio, max 1000px for better quality)
+                let { width, height } = img;
+                const maxSize = 1000;
+                
+                if (width > maxSize || height > maxSize) {
+                    if (width > height) {
+                        height = (height * maxSize) / width;
+                        width = maxSize;
+                    } else {
+                        width = (width * maxSize) / height;
+                        height = maxSize;
+                    }
+                }
+
+                // Setup canvas
+                duotoneCanvas.width = width;
+                duotoneCanvas.height = height;
+
+                // Draw image to canvas
+                ctx.drawImage(img, 0, 0, width, height);
+
+                // Get image data
+                const imageData = ctx.getImageData(0, 0, width, height);
+                const data = imageData.data;
+
+                // Define enhanced duotone colors (more vibrant for Gen Z aesthetic)
+                const pink = { r: 255, g: 0, b: 110 };      // Cyber Pink
+                const green = { r: 0, g: 245, b: 255 };     // Neon Cyan-Green
+
+                // Apply enhanced duotone effect with better contrast
+                for (let i = 0; i < data.length; i += 4) {
+                    // Calculate luminance with slightly different weights for more dramatic effect
+                    const luminance = (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114) / 255;
+                    
+                    // Apply smooth duotone mapping with enhanced contrast
+                    const smoothLuminance = Math.pow(luminance, 0.8); // Gamma correction for better contrast
+                    
+                    data[i]     = Math.round(green.r * (1 - smoothLuminance) + pink.r * smoothLuminance);     // Red
+                    data[i + 1] = Math.round(green.g * (1 - smoothLuminance) + pink.g * smoothLuminance);     // Green  
+                    data[i + 2] = Math.round(green.b * (1 - smoothLuminance) + pink.b * smoothLuminance);     // Blue
+                    // Alpha channel (data[i + 3]) remains unchanged
+                }
+
+                // Put processed image data back to canvas
+                ctx.putImageData(imageData, 0, 0);
+
+                // Show results with animation
+                duotoneCanvas.style.display = 'block';
+                downloadBtn.style.display = 'inline-block';
+                resultsSection.style.display = 'block';
+
+                // Scroll to results with smooth animation
+                setTimeout(() => {
+                    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Add some visual feedback
+                    resultsSection.style.opacity = '0';
+                    resultsSection.style.transform = 'translateY(30px)';
+                    
+                    setTimeout(() => {
+                        resultsSection.style.transition = 'all 0.8s ease';
+                        resultsSection.style.opacity = '1';
+                        resultsSection.style.transform = 'translateY(0)';
+                    }, 100);
+                }, 300);
+            }
+
+            // Add some cool hover effects
+            document.querySelectorAll('.color-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-15px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add typing effect to title
+            const title = document.querySelector('.header h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            
+            setTimeout(typeWriter, 500);
+
+            // Add glitch effect on hover for main title
+            title.addEventListener('mouseenter', () => {
+                title.style.textShadow = `
+                    2px 2px 0px #ff006e,
+                    -2px -2px 0px #00f5ff,
+                    0 0 30px #ff006e,
+                    0 0 50px #00f5ff
+                `;
+            });
+
+            title.addEventListener('mouseleave', () => {
+                title.style.textShadow = '0 0 30px var(--glow-pink)';
+            });
+        });
+
+        // Add some Easter eggs
+        let konami = [];
+        const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // Up Up Down Down Left Right Left Right B A
+
+        document.addEventListener('keydown', (e) => {
+            konami.push(e.keyCode);
+            konami.splice(-konamiCode.length - 1, konami.length - konamiCode.length);
+            
+            if (konami.join('').indexOf(konamiCode.join('')) >= 0) {
+                // Easter egg: Matrix effect
+                document.body.style.background = 'black';
+                document.body.style.color = '#00ff00';
+                alert('🎮 Justice Mode Activated! 1312 Forever! 🎮');
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
+            }
+        });
+
+        // Add random motivational quotes
+        const quotes = [
+            "Justice never sleeps 🌙",
+            "Every pixel tells a story 📱",
+            "Transform with purpose ⚡",
+            "Honor through art 🎨",
+            "Digital solidarity 💪"
+        ];
+
+        setInterval(() => {
+            const quote = quotes[Math.floor(Math.random() * quotes.length)];
+            console.log(`%c${quote}`, 'color: #ff006e; font-size: 16px; font-weight: bold;');
+        }, 10000);
+    </script>
+</body>
+</html>
